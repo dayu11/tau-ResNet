@@ -51,6 +51,3 @@ The following command trains the Resnet101 model without batch normalization.
 ```
 python imagenet_train.py --arch resnet101_nobn --tau 0.4 --sess imagenet_tau0.4_nobn --data_dir data_folder_path
 ```
-
-# Cite our paper
-
