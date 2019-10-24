@@ -16,7 +16,7 @@ CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110 --sess baseline
 
 The network architecture and hyperparameters are the same as in "Deep Residual Learning for Image Recognition". The result can be found in the result folder. 
 
-The authors of "STABILITY AND CONVERGENCE THEORY FOR LEARNING RESNET: A FULL CHARACTERIZATION" suggest adding a scale factor tau=1/sqrt(L) at the output of each residual block, where L is the number of residual blocks (54 for resnet110). 
+The authors of "Convergence Theory of Learning Over-parameterized ResNet: A Full Characterization" suggest adding a scale factor tau=1/sqrt(L) at the output of each residual block, where L is the number of residual blocks (54 for resnet110). 
 
 The following command trains the Resnet110 model with tau=0.136.
 
