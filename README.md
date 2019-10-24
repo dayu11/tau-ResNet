@@ -34,7 +34,7 @@ You can also train Resnet model without batch normalization. The following comma
 CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110_nobn --tau 0.136 --sess tau0.136_nobn
 ```
 
-Set tau=0.5/sqrt(L) (0.068) would lead to better performance. When withoutbn, the training explodes for large tau, which implies that tau=O(1/sqrt(L)) is a sharp value determining the trainability.
+Set tau=0.5/sqrt(L) (0.068) would lead to better performance. When withoutbn, the training explodes for large tau, which implies that tau=O(1/sqrt(L)) is a sharp bound determining the trainability.
 
 # Experiments on ImageNet
 
