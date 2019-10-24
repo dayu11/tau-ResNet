@@ -24,7 +24,7 @@ The following command trains the Resnet110 model with tau=1/sqrt(54)=0.136.
 CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110 --tau 0.136 --sess tau0.136
 ```
 
-The following chart shows the comparison between tau-ResNet and ResNet with different depths.We can see that tau-ResNet improves over original ResNet by a considerable margin, especially for deep ResNet.
+The following chart shows the comparison between tau-ResNet and ResNet with different depths. We can see that tau-ResNet improves over original ResNet by a considerable margin, especially for deep ResNet.
 
 <img src="cifar-bn.png" width="650" height="500">
 
