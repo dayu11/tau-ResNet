@@ -16,7 +16,7 @@ CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110 --sess baseline
 
 The network architecture and hyperparameters are the same as in "Deep Residual Learning for Image Recognition". The result can be found in the result folder. 
 
-Beyond the original ResNet, we suggest using a scale factor tau=1/sqrt(L) on top of each residual block, where L is the number of residual blocks (54 for resnet110). 
+Beyond the original ResNet, we suggest using a scale factor tau=O(1/sqrt(L)) on top of each residual block, where L is the number of residual blocks (54 for resnet110). 
 
 The following command trains the Resnet110 model with tau=1/sqrt(54)=0.136.
 
@@ -34,7 +34,7 @@ You can also train Resnet model without batch normalization. The following comma
 CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110_nobn --tau 0.136 --sess tau0.136_nobn
 ```
 
-When withoutbn, the training explodes for larger tau, which implies that tau=1/sqrt(L) is a sharp value determining the trainability.
+Set tau=0.5/sqrt(L) (0.068) would lead to better performance. When withoutbn, the training explodes for large tau, which implies that tau=O(1/sqrt(L)) is a sharp value determining the trainability.
 
 # Experiments on ImageNet
 
