@@ -113,6 +113,7 @@ if use_cuda:
 loss_func = nn.CrossEntropyLoss()
 parameters_bias = [p[1] for p in net.named_parameters() if ('bias1' in p[0] or 'bias2' in p[0] or 'bias3' in p[0])]
 parameters_tau = [p[1] for p in net.named_parameters() if 'tau' in p[0]]
+# When use bn, parmeters_bias and parameters_tau are empty.
 parameters_others = [p[1] for p in net.named_parameters() if not ('bias1' in p[0] or 'bias2' in p[0] or 'bias3' in p[0] or 'tau' in p[0])]
 optimizer = optim.SGD(
         [{'params': parameters_bias, 'lr': args.lr/10., 'initial_lr': args.lr/10.}, 
