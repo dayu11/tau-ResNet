@@ -34,13 +34,13 @@ You can also train Resnet model without batch normalization. The following comma
 CUDA_VISIBLE_DEVICES=0 python cifar_train.py --arch resnet110_nobn --tau 0.136 --sess tau0.136_nobn
 ```
 
-Set tau=0.5/sqrt(L) (0.068) would lead to better performance. When withoutbn, the training explodes for large tau, which implies that tau=O(1/sqrt(L)) is a sharp bound determining the trainability.
+In practice, one can fine tune tau (i.e. tau=0.5/sqrt(L)) to achieve slightly better performeance.
 
 # Experiments on ImageNet
 
 Go to the imagenet folder. You need to download the ImageNet classification dataset from http://www.image-net.org/challenges/LSVRC/2012/ first.
 
-We set L as the largest number of blocks over all stages. The following command trains the Resnet101 model with tau=0.4. Other ResNets are supported with depth 50/152. 
+We set L as the largest number of blocks over all stages and choose tau=2/sqrt(L) for ImageNet. The following command trains the Resnet101 model with tau=0.4. Other ResNets are supported with depth 50/152. 
 
 ```
 python imagenet_train.py --arch resnet101 --tau 0.4 --sess imagenet_tau0.4 --data_dir data_folder_path
